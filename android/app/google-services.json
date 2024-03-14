@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "284141308076",
+    "project_id": "aadesh-task",
+    "storage_bucket": "aadesh-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284141308076:android:84a664e4f8548b3eaf3709",
+        "android_client_info": {
+          "package_name": "com.example.urban_culture_aadesh_mishra_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHYCrbeAtlKC8w5HlpdOZctXaZFjBUiXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
