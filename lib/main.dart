@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:urban_culture_aadesh_mishra_task/ui/dashboard_screen/dashboard_screen.dart';
+import 'business_logic/controller/controller_bindings.dart';
 import 'core/export_core.dart';
 import 'firebase_options.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             title: 'Aadesh Mishra Task',
             theme: AppTheme.lightTheme,
+            initialBinding: ControllerBindings(),
             debugShowCheckedModeBanner: false,
             home: const DashboardScreen(),
           );

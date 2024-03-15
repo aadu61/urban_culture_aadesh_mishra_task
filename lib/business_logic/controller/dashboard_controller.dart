@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:urban_culture_aadesh_mishra_task/business_logic/controller/fire_base_store_controller.dart';
+import 'package:urban_culture_aadesh_mishra_task/core/common/console.dart';
 import 'package:urban_culture_aadesh_mishra_task/ui/dashboard_screen/pages/routine_pages.dart';
 import 'package:urban_culture_aadesh_mishra_task/ui/dashboard_screen/pages/streaks_pages.dart';
 
@@ -107,6 +109,7 @@ class DashBoardController extends GetxController{
   void onInit() async {
     super.onInit();
     setGraphData();
+    fetchDataFromTheFireBase();
   }
 
   void setGraphData() {
@@ -135,6 +138,18 @@ class DashBoardController extends GetxController{
       chartDataModel.add(ChartDataModel(element.title, chartData[i].y));
     }
     return chartDataModel;
+  }
+
+  void fetchDataFromTheFireBase() async {
+
+    dailySkinCareList[0].imgurl = await FireBaseStoreController.instance.getFile(type: "Cleanser");
+    dailySkinCareList[1].imgurl = await FireBaseStoreController.instance.getFile(type: "Toner");
+    dailySkinCareList[2].imgurl = await FireBaseStoreController.instance.getFile(type: "Moisturizer");
+    dailySkinCareList[3].imgurl = await FireBaseStoreController.instance.getFile(type: "Sunscreen");
+    dailySkinCareList[4].imgurl = await FireBaseStoreController.instance.getFile(type: "Lip Balm");
+
+    Console.debug(dailySkinCareList.toString());
+    dailySkinCareList.refresh();
   }
 
 }
